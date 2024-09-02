@@ -10,9 +10,9 @@
   ];
 
   mkDerivation = {
-    src = builtins.fetchGit {
-      shallow = true;
-      url = "https://github.com/edchapman88/serving";
+    src = builtins.path {
+      name = "serving";
+      path = ./.;
     };
   };
 
