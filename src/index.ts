@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { createServer } from 'node:http';
 
 const hostname = '127.0.0.1';
