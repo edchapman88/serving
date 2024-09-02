@@ -6,9 +6,13 @@
   "engines": {
     "node": ">=20.6.0"
   },
+  "bin": {
+    "serving": "dist/index.js"
+  },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.json",
     "dev": "node --env-file=.env --watch -r ts-node/register src/index.ts",
+    "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
