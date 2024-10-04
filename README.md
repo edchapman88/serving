@@ -12,3 +12,5 @@ See and edit the parameters in the `Makefile`, and then `make` to produce:
 - server private key
 
 **Keep the CA private key safe because it enables new certs to be produced that are considered trusted for any devices on which the CA has been added as a trusted CA!**
+
+The steps in the `Makefile` were informed by this [blog post](https://arminreiter.com/2022/01/create-your-own-certificate-authority-ca-using-openssl/).
