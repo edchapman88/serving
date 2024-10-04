@@ -18,5 +18,16 @@ ca_cert : ca_secret_key output_dir
 server_cert : output_dir 
 	openssl req -new -nodes -out $(dir)/$(server_name).csr -newkey rsa:4096 -keyout $(dir)/$(server_name).key -subj '/CN=$(server_name)/C=GB/ST=London/L=London/O=ServingOrg'
 
+server_san.v3.ext : output_dir
+	cat > $@ << EOF
+	authorityKeyIdentifier=keyid,issuer
+	basicConstraints=CA:FALSE
+	keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+	subjectAltName = @alt_names
+	[alt_names]
+	DNS.1 = $(server_name).local
+	IP.1 = $(server_IP)
+	EOF
+
 clean :
 	rm -r $(dir)
