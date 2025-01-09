@@ -3,7 +3,7 @@ local_dir = physical
 vm_dir = virtual
 cert_auth_name = some-cert-auth
 server_name = serving
-server_IP_vm = 169.254.220.0
+server_IP_vm = 172.0.0.1
 server_IP_local = 169.254.220.46
 
 define EXT_TEXT_LOCAL
